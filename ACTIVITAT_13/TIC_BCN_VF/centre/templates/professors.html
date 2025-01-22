@@ -1,0 +1,28 @@
+{% extends 'index_centre.html' %}
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>NOM</th>
+            <th>COGNOM</th>
+            <th>COGNOM2</th>
+            <th>CORREO</th>
+            <th>CURS</th>
+            <th>ROL</th>
+            <th>MODULS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            {% for professor in professors %}
+            <td>{{ professor.nombre }}</td>
+            <td>{{ professor.cognom }}</td>
+            <td>{{ professor.cognom2 }}</td>
+            <td>{{ professor.correo }}</td>
+            <td>{{ professor.curso }}</td>
+            <td>{{ professor.rol }}</td>
+            <td>{{ professor.modulos }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}
