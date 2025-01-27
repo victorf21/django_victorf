@@ -5,9 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'styles/header.css' %}">
+    <link rel="stylesheet" href="{% static 'centre/static/styles/header.css' %}">
 </head>
 <body>
-    <h1>HOLAAAAAAaaa</h1>
+    <header class="header">
+        <nav class="navbar">
+            <h1 class="navbar-title">Centre TIC Barcelona</h1>
+            <ul class="navbar-menu">
+                <li><a href="/centre/teachers/" class="navbar-link">Professors</a></li>
+                <li><a href="/centre/students/" class="navbar-link">Alumnat</a></li>
+            </ul>
+        </nav>
+    </header>    
 </body>
 </html>
