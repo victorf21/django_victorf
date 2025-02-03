@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-
 # Create your views here.
 def guardar_sesion(request):
     request.session['usuario'] = 'Juan'
