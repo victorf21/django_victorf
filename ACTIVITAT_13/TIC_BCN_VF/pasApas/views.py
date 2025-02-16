@@ -50,3 +50,7 @@ def inici(request):
         return render(request, 'inici.html', {'nom': usuari.nom})
     else:
         return redirect('login_sense_sessio')
+
+def logout_view(request):
+    request.session.flush()  
+    return redirect('login_sense_sessio')
