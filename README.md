@@ -22,3 +22,10 @@ Urls para la llamada de los métodos
 
 Urls añadidos a urls.py del proyecto principal
 ![urls.py proyecto](/ACTIVITAT_13/imagenes/urlsproyecto.png)
+
+### 2. Creación modelo de la aplicación
+Comando de las migraciones
+![Comandos migrate](/ACTIVITAT_13/imagenes/comandosmigrate.png)
+
+Vista base de datos después de las migraciones
+![Tablas creadas en la base de datos](/ACTIVITAT_13/imagenes/BaseDatos.png)
