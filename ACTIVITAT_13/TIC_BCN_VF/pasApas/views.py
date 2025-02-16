@@ -17,7 +17,7 @@ def login_sense_sessio(request):
         try:
             usuari = Usuari.objects.get(email=email)
             if password == usuari.contrasenya:  
-                return render(request, 'index.html')
+                return render(request, 'inici.html')
             else:
                 error = "Credencials incorrectes."
         except Usuari.DoesNotExist:
