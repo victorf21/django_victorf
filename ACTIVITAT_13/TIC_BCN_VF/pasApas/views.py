@@ -30,7 +30,7 @@ def login_amb_sessio(request):
     error = None
     if request.method == "POST":
         email = request.POST.get('email')
-        password = request.POST.get('contrasenya')
+        password = request.POST.get('password')
         
         try:
             usuari = Usuari.objects.get(email=email, contrasenya=password)
@@ -40,3 +40,13 @@ def login_amb_sessio(request):
             error = "Credencials incorrectes."
 
     return render(request, 'login.html', {'error': error})
+
+def inici(request):
+    usuari_id = request.session.get('usuari_id') 
+
+    if usuari_id:
+        from .models import Usuari
+        usuari = Usuari.objects.get(id=usuari_id)
+        return render(request, 'inici.html', {'nom': usuari.nom})
+    else:
+        return redirect('login_sense_sessio')
