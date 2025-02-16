@@ -1,0 +1,30 @@
+{% extends 'index_centre.html' %}
+{% block content %}
+<h1>INFORMACIÓ PROFESSORAT TIC BARCELONA</h1>
+<table>
+    <thead>
+        <tr>
+            <th>NOM</th>
+            <th>COGNOM</th>
+            <th>COGNOM2</th>
+            <th>CORREO</th>
+            <th>CURS</th>
+            <th>ROL</th>
+            <th>MODULS</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for professor in professors %}
+        <tr>
+            <td>{{ professor.name }}</td>
+            <td>{{ professor.surname }}</td>
+            <td>{{ professor.surname2 }}</td>
+            <td>{{ professor.mail }}</td>
+            <td>{{ professor.curs }}</td>
+            <td>{{ professor.role }}</td>
+            <td>{{ professor.moduls }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

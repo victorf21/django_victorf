@@ -1,0 +1,29 @@
+{% extends 'index_centre.html' %}
+{% block content %}
+<h1>INFORMACIÓ ALUMNAT TIC BARCELONA</h1>
+<table>
+    <thead>
+        <tr>
+            <th>NOM</th>
+            <th>COGNOM</th>
+            <th>COGNOM2</th>
+            <th>CORREO</th>
+            <th>CURS</th>
+            <th>MODULS</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.name }}</td>
+            <td>{{ student.surname }}</td>
+            <td>{{ student.surname2 }}</td>
+            <td>{{ student.mail }}</td>
+            <td>{{ student.curs }}</td>
+            <td>{{ student.role }}</td>
+            <td>{{ student.moduls }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
