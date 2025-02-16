@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import PersonForm
 from .models import Usuari
 
@@ -22,5 +22,21 @@ def login_sense_sessio(request):
                 error = "Credencials incorrectes."
         except Usuari.DoesNotExist:
             error = "Usuari no trobat."
+
+    return render(request, 'login.html', {'error': error})
+
+
+def login_amb_sessio(request):
+    error = None
+    if request.method == "POST":
+        email = request.POST.get('email')
+        password = request.POST.get('contrasenya')
+        
+        try:
+            usuari = Usuari.objects.get(email=email, contrasenya=password)
+            request.session['usuari_id'] = usuari.id 
+            return redirect('inici')  
+        except Usuari.DoesNotExist:
+            error = "Credencials incorrectes."
 
     return render(request, 'login.html', {'error': error})
